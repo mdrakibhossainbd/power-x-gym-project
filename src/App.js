@@ -8,6 +8,11 @@ import PageNotFound from './components/PageNotFound/PageNotFound';
 import SubHeader from './components/SubHeader/SubHeader';
 import PriceBody from './components/PriceBody/PriceBody';
 
+import OurClasses from './components/OurClasses/OurClasses/OurClasses';
+import ClassDetails from './components/OurClasses/ClassDetails/ClassDetails';
+import PersonalDetails from './components/PersonalDetails/PersonalDetails';
+import Payment from './components/Payment/Payment';
+import Success from './components/Success/Success';
 
 function App() {
   return (
@@ -26,14 +31,17 @@ function App() {
           <Route path='/class'>
             <Navbar />
             <SubHeader header='OUR CLASSES' />
+            <OurClasses></OurClasses>
+            {/* <ClassDetails></ClassDetails> */}
             <Footer />
           </Route>
 
 
-          <Route path='/details/:page'>
+          <Route path='/classDetails/:ClassesCard'>
             <Navbar />
             <SubHeader header='' />
             {/* here we will add details about our courses */}
+            <ClassDetails></ClassDetails>
             <Footer />
           </Route>
 
@@ -50,10 +58,25 @@ function App() {
           <Route path='/membership'>
             <Navbar />
             <SubHeader header='YOUR GYM MEMBERSHIP' />
-             {/* here you will add booking table  */}
+             <PersonalDetails></PersonalDetails>
             <Footer />
           </Route>
 
+
+          <Route path='/payment'>
+            <Navbar />
+            <SubHeader header='YOUR GYM MEMBERSHIP' />
+           
+             <Payment></Payment>
+            <Footer />
+          </Route>
+
+          <Route path='/success'>
+            <Navbar />
+            <SubHeader header='THANKS FOR ADMISSION' />
+            <Success></Success>
+            <Footer />
+          </Route>
           
           <Route path='*'>
             <PageNotFound />
